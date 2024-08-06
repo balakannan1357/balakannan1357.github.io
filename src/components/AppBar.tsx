@@ -13,6 +13,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import ScrollToTop from "./ScrollToTop";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const drawerWidth = 200;
 const navItems = [
@@ -51,10 +52,23 @@ export default function DrawerAppBar() {
   const container =
     window !== undefined ? () => window.document.body : undefined;
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: "system-ui",
+    },
+  });
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar component="nav" sx={{ bgcolor: "#ccc" }}>
+      <AppBar
+        component="nav"
+        sx={{
+          background: "transparent",
+          boxShadow: "none",
+          paddingInline: "3em",
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -103,6 +117,6 @@ export default function DrawerAppBar() {
       </nav>
       <Toolbar id="back-to-top-anchor" />
       <ScrollToTop querySelector="#back-to-top-anchor" />
-    </>
+    </ThemeProvider>
   );
 }
