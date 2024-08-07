@@ -64,7 +64,8 @@ export default function DrawerAppBar() {
       <AppBar
         component="nav"
         sx={{
-          background: "transparent",
+          background:
+            "linear-gradient(90deg, rgba(30,38,46,1) 0%, rgba(48,52,63,1) 83%)",
           boxShadow: "none",
           paddingInline: "3em",
         }}

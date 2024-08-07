@@ -3,7 +3,7 @@ import { createTheme, responsiveFontSizes, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import CardMedia from "@mui/material/CardMedia";
 
-function Home() {
+export default function Home() {
   let theme = createTheme();
   theme = responsiveFontSizes(theme);
   return (
@@ -13,6 +13,8 @@ function Home() {
           paddingInline: "5em",
           display: "flex",
           alignItems: "center",
+          background:
+            "linear-gradient(90deg, rgba(30,38,46,1) 0%, rgba(48,52,63,1) 83%)",
         }}
       >
         <Typography variant="h4">
@@ -36,4 +38,3 @@ function Home() {
     </ThemeProvider>
   );
 }
-export default Home;
