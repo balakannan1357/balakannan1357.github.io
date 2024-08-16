@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <Box
+        id="home"
         sx={{
           paddingInline: "5em",
           display: "flex",
@@ -31,7 +32,7 @@ export default function Home() {
           sx={{
             padding: "1em 1em 0 1em",
             objectFit: "contain",
-            // WebkitFilter: "drop-shadow(1px 1px 1px #000)",
+            WebkitFilter: "drop-shadow(5px 5px 5px #fff)",
           }}
         />
       </Box>

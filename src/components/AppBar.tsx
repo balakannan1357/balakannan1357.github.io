@@ -1,9 +1,7 @@
-import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -11,9 +9,11 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Button from "@mui/material/Button";
-import ScrollToTop from "./ScrollToTop";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import ScrollToTop from "./ScrollToTop";
 
 const drawerWidth = 200;
 const navItems = [
@@ -89,7 +89,11 @@ export default function DrawerAppBar() {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item.label} sx={{ color: "#fff" }}>
+              <Button
+                href={"#" + item.label}
+                key={item.label}
+                sx={{ color: "#fff" }}
+              >
                 {item.label}
               </Button>
             ))}
