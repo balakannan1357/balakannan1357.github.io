@@ -14,8 +14,7 @@ export default function Home() {
           paddingInline: "5em",
           display: "flex",
           alignItems: "center",
-          background:
-            "linear-gradient(90deg, rgba(30,38,46,1) 0%, rgba(48,52,63,1) 83%)",
+          background: "linear-gradient(to right, #f8f9fa, #e9ecef, #f8f9fa);",
         }}
       >
         <Typography variant="h4">
@@ -27,8 +26,7 @@ export default function Home() {
           height="700"
           width="200"
           image="/src/assets/bk-bg-removed.png"
-          alt={"alt"}
-          title={"titleasdasdsada"}
+          alt={"profile picture"}
           sx={{
             padding: "1em 1em 0 1em",
             objectFit: "contain",
