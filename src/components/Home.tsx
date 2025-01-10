@@ -2,6 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import { createTheme, responsiveFontSizes, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import CardMedia from "@mui/material/CardMedia";
+import myImage from "../assets/bk-bg-removed.png";
 
 export default function Home() {
   let theme = createTheme();
@@ -25,7 +26,7 @@ export default function Home() {
           component="img"
           height="700"
           width="200"
-          image="/src/assets/bk-bg-removed.png"
+          image={myImage}
           alt={"profile picture"}
           sx={{
             padding: "1em 1em 0 1em",
