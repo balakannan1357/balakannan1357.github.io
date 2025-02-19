@@ -7,10 +7,12 @@ import Experience from "./components/Experience";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import SplashCursor from "./components/SplashCursor";
 
 function App() {
   return (
     <>
+      <SplashCursor />
       <DrawerAppBar />
       <Home />
       <About />
