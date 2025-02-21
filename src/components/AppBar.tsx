@@ -17,11 +17,15 @@ import ScrollToTop from "./ScrollToTop";
 
 const drawerWidth = 200;
 const navItems = [
-  { label: "Home", icon: "fa-solid fa-house" },
-  { label: "About", icon: "fa-solid fa-user" },
-  { label: "Blogs", icon: "fa-solid fa-pen-nib" },
-  { label: "Skills", icon: "fa-solid fa-house" },
-  { label: "Contact", icon: "fa-solid fa-house" },
+  { label: "Home", icon: "fa-solid fa-house", href: "#Home" },
+  { label: "About", icon: "fa-solid fa-user", href: "#About" },
+  { label: "Blogs", icon: "fa-solid fa-pen-nib", href: "#Blogs" },
+  {
+    label: "Resume",
+    icon: "fa-solid fa-file",
+    href: "https://drive.google.com/file/d/12VNqT49RAt1ez25eovmXg7r0PxKAkdZk/view?usp=sharing",
+  },
+  { label: "Contact", icon: "fa-solid fa-envelope", href: "#Contact" },
 ];
 
 export default function DrawerAppBar() {
@@ -40,7 +44,12 @@ export default function DrawerAppBar() {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.label} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              component="a"
+              href={item.href}
+              sx={{ textAlign: "center" }}
+              target={item.label === "Resume" ? "_blank" : "_self"}
+            >
               <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
@@ -64,8 +73,8 @@ export default function DrawerAppBar() {
       <AppBar
         component="nav"
         sx={{
-          background:
-            "linear-gradient(90deg, rgba(30,38,46,1) 0%, rgba(48,52,63,1) 83%)",
+          background: "#ffffff00",
+          backdropFilter: "blur(10px)",
           boxShadow: "none",
           paddingInline: "3em",
         }}
@@ -83,16 +92,17 @@ export default function DrawerAppBar() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { sm: "block" } }}
+            sx={{ flexGrow: 1, display: { sm: "block" }, color: "#60ccc2" }}
           >
             Bk.
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button
-                href={"#" + item.label}
+                href={item.href}
                 key={item.label}
-                sx={{ color: "#fff" }}
+                sx={{ color: "#60ccc2", fontSize: "0.9em" }}
+                target={item.label === "Resume" ? "_blank" : "_self"}
               >
                 {item.label}
               </Button>
