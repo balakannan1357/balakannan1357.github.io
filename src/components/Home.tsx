@@ -1,7 +1,11 @@
 import { ThemeProvider } from "@emotion/react";
-import { createTheme, responsiveFontSizes, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
-import CardMedia from "@mui/material/CardMedia";
+import {
+  Box,
+  CardMedia,
+  Typography,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { ReactTyped } from "react-typed";
@@ -18,23 +22,24 @@ export default function Home() {
         sx={{
           position: "relative",
           top: "-4em",
-          paddingInline: "5em",
+          height: "80vh",
           display: "flex",
-          alignItems: "center",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-around",
+          alignItems: "center",
+          px: { xs: "1em", sm: "2em", md: "5em" },
+          pt: { xs: "7em", md: "0" },
           background: "linear-gradient(135deg, #008080, #74404f)",
         }}
       >
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
-            justifyContent: "center",
-            minWidth: "30%",
-            maxWidth: "40%",
+            width: { xs: "100%", sm: "50%", md: "40%", lg: "30%" },
+            minWidth: { xs: "90vw", sm: "50vw", md: "30vw", lg: "20vw" },
             borderRadius: "8px",
             backgroundColor: "#000",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <Typography
@@ -58,9 +63,8 @@ export default function Home() {
             customStyle={{
               backgroundColor: "#000",
               padding: ".3em .7em",
-              margin: "0",
+              margin: 0,
               fontSize: "0.9em",
-              borderRadius: "0",
               width: "100%",
             }}
           >
@@ -94,19 +98,27 @@ export default function Home() {
             />
           </Typography>
         </Box>
-
-        <CardMedia
-          component="img"
-          height="700"
-          width="200"
-          image={myImage}
-          alt="profile picture"
+        <Box
           sx={{
-            padding: "1em 1em 0 1em",
-            objectFit: "contain",
-            maxWidth: "40%",
+            width: { xs: "100%", md: "30%" },
+            height: "100%",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
           }}
-        />
+        >
+          <CardMedia
+            component="img"
+            image={myImage}
+            alt="profile picture"
+            sx={{
+              width: { xs: "70%", md: "100%" },
+              maxHeight: { xs: "50vh", md: "70vh" },
+              objectFit: "contain",
+              objectPosition: "bottom",
+            }}
+          />
+        </Box>
       </Box>
     </ThemeProvider>
   );

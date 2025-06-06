@@ -28,7 +28,8 @@ export default function Blogs() {
     <Box
       id="Blogs"
       sx={{
-        p: "5em",
+        px: { xs: "1.5em", md: "5em" },
+        py: { xs: "3em", md: "5em" },
         textAlign: "center",
       }}
     >
@@ -46,10 +47,10 @@ export default function Blogs() {
         container
         spacing={3}
         justifyContent="center"
-        sx={{ maxWidth: "70%", margin: "auto" }}
+        sx={{ maxWidth: "100%", margin: "auto" }}
       >
         {blogs.map((blog, index) => (
-          <Grid size={{ xs: 12, sm: 6 }} key={index}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
             <TiltedCard blog={blog} />
           </Grid>
         ))}
@@ -94,6 +95,9 @@ function TiltedCard({ blog }: any) {
         justifyContent: "space-between",
         textDecoration: "none",
         cursor: "pointer",
+        height: "100%",
+        maxWidth: { xs: "100%", sm: "95%", md: "100%" },
+        mx: "auto",
       }}
     >
       <CardContent sx={{ flexGrow: 1 }}>

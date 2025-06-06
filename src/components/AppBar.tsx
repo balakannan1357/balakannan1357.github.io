@@ -23,7 +23,7 @@ const navItems = [
   {
     label: "Resume",
     icon: "fa-solid fa-file",
-    href: "https://drive.google.com/file/d/12VNqT49RAt1ez25eovmXg7r0PxKAkdZk/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1teYRS5YODHis89hfq-OOynDiyuZpGZ40/view?usp=sharing",
   },
   { label: "Contact", icon: "fa-solid fa-envelope", href: "#Contact" },
 ];
@@ -76,7 +76,7 @@ export default function DrawerAppBar() {
           background: "#ffffff00",
           backdropFilter: "blur(10px)",
           boxShadow: "none",
-          paddingInline: "3em",
+          px: { xs: "1em", md: "3em" },
         }}
       >
         <Toolbar>
@@ -87,7 +87,7 @@ export default function DrawerAppBar() {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: "none" } }}
           >
-            <i className="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars" style={{ color: "#60ccc2" }}></i>
           </IconButton>
           <Typography
             variant="h6"
