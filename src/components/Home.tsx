@@ -100,11 +100,25 @@ export default function Home() {
         </Box>
         <Box
           sx={{
+            position: "relative",
             width: { xs: "100%", md: "30%" },
             height: "100%",
             display: "flex",
             alignItems: "flex-end",
             justifyContent: "center",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              width: "110%",
+              height: "80%",
+              borderRadius: "50%",
+              background:
+                "radial-gradient(circle, rgba(0,255,255,0.1), transparent 70%)",
+              transform: "translate(-50%, -50%)",
+              zIndex: 0,
+            },
           }}
         >
           <CardMedia
@@ -112,10 +126,12 @@ export default function Home() {
             image={myImage}
             alt="profile picture"
             sx={{
+              zIndex: 1,
               width: { xs: "70%", md: "100%" },
               maxHeight: { xs: "50vh", md: "70vh" },
               objectFit: "contain",
               objectPosition: "bottom",
+              filter: "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6))",
             }}
           />
         </Box>
